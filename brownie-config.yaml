@@ -1,0 +1,24 @@
+dependencies: 
+  - OpenZeppelin/openzeppelin-contracts@4.9.2
+  - smartcontractkit/chainlink@2.2.0
+compiler:
+  solc:
+    remappings:
+      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.9.2"
+      - "@chain=smartcontractkit/chainlink@2.2.0"
+dotenv: .env
+wallets:
+  from_key: ${PRIVATE_KEY}
+networks:
+  sepolia:
+    link_token: "0x779877A7B0D9E8603169DdbD7836e478b4624789"
+    vrf_wrapper: "0xab18414CD93297B0d12ac29E63Ca20f515b3DB46"
+    callbackGasLimit: 300000 
+    requestConfirmations: 3
+    numWords: 1
+    fee: 3000000000000000000
+  development:
+    callbackGasLimit: 300000 
+    requestConfirmations: 3
+    numWords: 3
+    fee: 3000000000000000000
